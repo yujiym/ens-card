@@ -1,4 +1,4 @@
-import { GithubLogo, GlobeSimple, MapPin, XLogo } from '@phosphor-icons/react'
+import { GithubLogo, GlobeSimple, MapPin, TelegramLogo, XLogo } from '@phosphor-icons/react'
 import FarcasterLogo from '~/components/icons/Farcaster'
 
 export default function Records({ data }) {
@@ -44,6 +44,18 @@ export default function Records({ data }) {
               className="flex items-center hover:opacity-90"
             >
               <FarcasterLogo /> {data?.records['xyz.farcaster']}
+            </a>
+          </li>
+        )}
+        {data?.records['org.telegram'] && (
+          <li>
+            <a
+              href={`https://t.me/${data?.records['org.telegram']}`}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center hover:opacity-90"
+            >
+              <TelegramLogo size={22} className="mr-2" /> {data?.records['org.telegram']}
             </a>
           </li>
         )}
