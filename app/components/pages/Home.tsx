@@ -1,3 +1,4 @@
+import { Code } from '@phosphor-icons/react'
 import ImgExampleDark from '~/assets/example-dark.png'
 import ImgExampleLight from '~/assets/example-light.png'
 
@@ -37,14 +38,23 @@ export default function Home() {
             backgroundImage: `url(${ImgExampleDark})`
           }}
         />
-        <div className="fixed right-0 bottom-6 left-0 flex items-center">
+        <div className="fixed right-0 bottom-6 left-0 flex items-center justify-center">
+          <span />
           <a
             href="/yujiym.base.eth"
-            className="mx-auto block rounded-full bg-slate-400/20 px-4 py-1 text-center text-sm"
+            className="flex h-8 items-center justify-center rounded-full bg-slate-400/20 px-4 py-1 text-center text-sm"
           >
             yujiym.base.eth 👉
           </a>
         </div>
+        <a
+          href="https://github.com/yujiym/ens-card"
+          target="_blank"
+          rel="noreferrer"
+          className="fixed top-4 right-4 flex h-8 items-center justify-center rounded-full bg-slate-400/20 px-4 py-1 text-center text-sm"
+        >
+          <Code size={22} className="mr-1" /> Src
+        </a>
       </a>
     </div>
   )
