@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-white dark:bg-slate-900 text-black dark:text-white;
+
+    @media (prefers-color-scheme: dark) {
+      color-scheme: dark;
+    }
+  }
+
+  button {
+    @apply rounded-full text-white font-semibold hover:opacity-90;
+  }
+}
+
+@layer components {
+  ul.record-list {
+    @apply border-b border-slate-400/20;
+    li {
+      @apply border-t border-slate-400/20 flex items-center;
+    }
+    li.nolink {
+      @apply px-1.5 py-3;
+    }
+    a {
+      @apply flex w-full h-full px-1.5 py-3;
+    }
+  }
+}
