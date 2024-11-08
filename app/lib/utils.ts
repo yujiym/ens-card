@@ -3,6 +3,17 @@ import { twMerge } from 'tailwind-merge'
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs))
 
+export const getVendor = (subname: string | undefined) => {
+  if (!subname) return 'ENS'
+  if (subname === 'base') {
+    return 'Basenames'
+  }
+  if (subname === 'uni') {
+    return 'uni.eth'
+  }
+  return 'ENS'
+}
+
 export const getClassBySubname = (subname: string, prefix = 'bg') => {
   if (subname === 'base') {
     return `${prefix}-basename${prefix === 'shadow' ? '/20' : ''}`

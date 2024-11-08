@@ -91,8 +91,6 @@ export async function getBasenameTextRecords(basename: Basename) {
       contracts: readContracts
     })
 
-    console.log('textRecords:', textRecords)
-
     return textRecordsKeysEnabled
       .map((key, index) => ({
         key,

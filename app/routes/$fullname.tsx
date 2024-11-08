@@ -4,10 +4,16 @@ import Providers from '~/components/Providers'
 import ProfilePage from '~/components/pages/Profile'
 import { type Basename, getBasenameTextRecord, getBasenameTextRecords } from '~/lib/basename'
 import { parseName } from '~/lib/ens'
+import { getVendor } from '~/lib/utils'
 
-export const meta: MetaFunction = ({ params }) => [
-  { title: params?.fullname ? `${params.fullname} on 0xCARD` : 'Profile on 0xCARD' }
-]
+export const meta: MetaFunction = ({ params }) => {
+  const { id, subname } = parseName(params?.fullname)
+  return [
+    {
+      title: `${id ?? 'Profile'} on ${getVendor(subname)}`
+    }
+  ]
+}
 
 export const loader: LoaderFunction = async ({ request, params }) => {
   const url = new URL(request.url)
@@ -34,7 +40,6 @@ export const loader: LoaderFunction = async ({ request, params }) => {
 
 export default function Profile() {
   const data = useLoaderData()
-  console.log('----data', data)
 
   return (
     <Providers>

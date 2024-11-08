@@ -5,7 +5,6 @@ import Records from '~/components/Records'
 import ShareButton from '~/components/ShareButton'
 
 export default function Profile({ data }) {
-  console.log('＆＆＆＆＆----data', data?.records)
   return (
     <Providers>
       <div className="container max-w-[420px] p-6">

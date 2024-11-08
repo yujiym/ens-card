@@ -1,5 +1,4 @@
 import { Copy, Share } from '@phosphor-icons/react'
-import { useLocation } from '@remix-run/react'
 import QRCode from 'react-qr-code'
 import StyledName from '~/components/StyledName'
 import { Drawer, DrawerContent, DrawerTrigger } from '~/components/ui/drawer'
@@ -10,10 +9,6 @@ export default function ShareButton({
   fullname,
   subname
 }: { url: string; fullname: string; subname: string }) {
-  const location = useLocation()
-
-  console.log('location', location)
-
   return (
     <Drawer>
       <DrawerTrigger asChild>

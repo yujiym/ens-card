@@ -5,11 +5,7 @@
 @layer base {
   html,
   body {
-    @apply bg-white dark:bg-slate-900 text-black dark:text-white;
-
-    @media (prefers-color-scheme: dark) {
-      color-scheme: dark;
-    }
+    @apply bg-white dark:bg-slate-900 text-slate-800 dark:text-white;
   }
 
   button {

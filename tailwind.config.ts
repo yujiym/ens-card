@@ -14,7 +14,7 @@ export default {
     'shadow-uni/20'
   ],
   theme: {
-    darkMode: 'class',
+    darkMode: 'media',
     container: {
       center: true
     },
