@@ -2,6 +2,8 @@ import Avatar from 'boring-avatars'
 import StyledName from '~/components/StyledName'
 import { cn, getClassBySubname, getImageUrl } from '~/lib/utils'
 
+const RealAvatar = typeof Avatar.default !== 'undefined' ? Avatar.default : Avatar
+
 export default function Card({
   avatar,
   fullname,
@@ -22,7 +24,7 @@ export default function Card({
           alt={`${fullname}'s avatar`}
         />
       ) : (
-        <Avatar
+        <RealAvatar
           variant="beam"
           name={fullname ?? ''}
           size={80}

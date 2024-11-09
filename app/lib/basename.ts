@@ -99,11 +99,7 @@ export async function getBasenameTextRecords(basename: Basename) {
       .filter((record) => !!record.value)
       .reduce(
         (acc, record) => {
-          if (acc[record.key]) {
-            acc[record.key] += `,${record.value}`
-          } else {
-            acc[record.key] = record.value
-          }
+          acc[record.key] = record.value
           return acc
         },
         {} as { [key: string]: string }

@@ -21,6 +21,21 @@ export const loader: LoaderFunction = async ({ request, params }) => {
 
   let records = {}
 
+  if (subname === '') {
+    // ENS
+    const basename = params.fullname as Basename
+    const location = await getBasenameTextRecord(basename, 'location')
+    const url2 = await getBasenameTextRecord(basename, 'url2')
+    const url3 = await getBasenameTextRecord(basename, 'url3')
+    const textRecords = await getBasenameTextRecords(basename)
+    records = {
+      ...textRecords,
+      location,
+      url2,
+      url3
+    }
+  }
+
   if (subname === 'base') {
     const basename = params.fullname as Basename
     const location = await getBasenameTextRecord(basename, 'location')
