@@ -1,7 +1,7 @@
 import { Copy, Share } from '@phosphor-icons/react'
 import QRCode from 'react-qr-code'
 import StyledName from '~/components/StyledName'
-import { Drawer, DrawerContent, DrawerTrigger } from '~/components/ui/drawer'
+import { Drawer, DrawerContent, DrawerTitle, DrawerTrigger } from '~/components/ui/drawer'
 import { cn, getClassBySubname } from '~/lib/utils'
 
 export default function ShareButton({
@@ -20,6 +20,7 @@ export default function ShareButton({
         </button>
       </DrawerTrigger>
       <DrawerContent>
+        <DrawerTitle className="hidden">{fullname}</DrawerTitle>
         <div className="p-6 text-center">
           <h2 className={cn('font-bold text-2xl', getClassBySubname(subname, 'text'))}>
             <StyledName fullname={fullname} />
@@ -32,7 +33,7 @@ export default function ShareButton({
             className="inline-flex items-center bg-slate-400 px-6 py-1.5"
             onClick={async () => await navigator.clipboard.writeText(url)}
           >
-            <Copy size={26} className="mr-2" />
+            <Copy size={26} className="-ml-2 mr-2" />
             Copy clipboard
           </button>
         </div>
